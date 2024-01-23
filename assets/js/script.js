@@ -1,4 +1,24 @@
 
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Cria um elemento <a> (link)
+    var downloadLink = document.createElement('a');
+
+    // Define o atributo 'href' para o link direto do seu arquivo no Google Drive
+    downloadLink.href = 'https://drive.google.com/file/d/1pMNjybfLyUut8GVjjZl5JDNzLjb_sCnp/view';
+
+    // Define o atributo 'download' com o nome do arquivo que será baixado
+    downloadLink.download = 'seu-cv.pdf';
+
+    // Simula um clique no link para iniciar o download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Remove o link temporário do DOM
+    document.body.removeChild(downloadLink);
+});
+
+
+
 function getProjects() {
   const urlGitHub = "https://api.github.com/users/SergioBerge/repos";
   var loadingElement = document.getElementById("loading");
